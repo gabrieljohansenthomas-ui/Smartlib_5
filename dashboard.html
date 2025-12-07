@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Perpustakaan Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Perpustakaan Digital SMK 3 Manado</h1>
+            <div>
+                <span id="user-info"></span>
+                <button id="logout-btn" class="ml-4 bg-red-500 px-4 py-2 rounded hover:bg-red-600">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto p-6">
+        <div id="member-dashboard" class="hidden">
+            <h2 class="text-2xl font-bold mb-4">Dashboard Member</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Katalog Buku</h3>
+                    <button id="view-catalog" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Lihat</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Peminjaman</h3>
+                    <button id="view-loans" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Lihat</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Review & Rating</h3>
+                    <button id="view-reviews" class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded">Lihat</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Statistik</h3>
+                    <button id="view-stats" class="mt-2 bg-purple-500 text-white px-4 py-2 rounded">Lihat</button>
+                </div>
+            </div>
+            <div id="content-area"></div>
+        </div>
+        
+        <div id="admin-dashboard" class="hidden">
+            <h2 class="text-2xl font-bold mb-4">Dashboard Admin</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Manajemen Buku</h3>
+                    <button id="manage-books" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Kelola</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold">Manajemen Anggota</h3>
+                    <button id="manage-members" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Kelola</button>
+                </div>
+            </div>
+            <div id="admin-content-area"></div>
+        </div>
+    </div>
+    
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/chart.js"></script>
+</body>
+</html>
